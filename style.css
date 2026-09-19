@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --ink: #f4f8e8;
+    --muted: #a6b1a8;
+    --paper: #080b0a;
+    --card: #121816;
+    --lime: #eaff38;
+    --coral: #ff553d;
+    --cyan: #4ee7d1;
+    --line: #29352f;
+    --mono: 'DM Mono', monospace;
+    --display: 'Space Grotesk', sans-serif;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; color: var(--ink); background: var(--paper); font-family: var(--display); }
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; }
+.site-header, .site-footer { width: min(1180px, calc(100% - 56px)); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+.site-header { padding: 29px 0; }
+.brand { font-size: 1.05rem; font-weight: 700; letter-spacing: .11em; }
+.brand span { color: var(--coral); }
+.main-nav { display: flex; gap: 30px; font-size: .86rem; }
+.main-nav a { color: var(--muted); padding-bottom: 7px; border-bottom: 2px solid transparent; }
+.main-nav a:hover, .main-nav .active { color: var(--ink); border-color: var(--coral); }
+.eyebrow { margin: 0 0 18px; color: var(--coral); font: .72rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+
+.welcome { width: min(1180px, calc(100% - 56px)); margin: 0 auto; padding: 58px 0 90px; }
+.welcome-copy { max-width: 650px; position: relative; z-index: 2; }
+h1 { margin: 0 0 22px; font-size: clamp(4.2rem, 9vw, 8.2rem); line-height: .84; letter-spacing: -.08em; }
+h1 em { color: var(--coral); font-style: normal; }
+.welcome-text, .page-heading > p:last-child { max-width: 420px; color: var(--muted); line-height: 1.7; }
+.destination-grid { width: min(800px, 100%); min-height: 530px; margin: 12px auto 0; position: relative; display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.destination { position: relative; overflow: hidden; border: 10px solid var(--paper); background: var(--ink); transition: transform .3s ease; }
+.destination:hover { transform: translateY(-8px) rotate(1deg); }
+.destination img { height: 100%; min-height: 250px; object-fit: cover; opacity: .82; transition: transform .5s ease, opacity .3s ease; }
+.destination:hover img { transform: scale(1.06); opacity: .96; }
+.destination-hotel { height: 330px; transform: rotate(-3deg); }
+.destination-lake { height: 360px; margin-top: 90px; transform: rotate(3deg); }
+.destination-food { height: 260px; margin-left: 90px; transform: rotate(2deg); }
+.destination-name { position: absolute; top: 20px; left: 20px; color: #fff; font-size: 1.45rem; font-weight: 600; text-shadow: 0 2px 14px #17211f88; }
+.destination-name b { color: var(--cyan); font-weight: 400; }
+.center-mark { position: absolute; top: 49%; left: 51%; width: 145px; height: 145px; padding: 26px 20px; display: flex; flex-direction: column; justify-content: space-between; background: var(--lime); border: 10px solid var(--paper); color: #080b0a; transform: translate(-50%, -50%) rotate(-7deg); z-index: 3; }
+.center-mark span { font-size: 2.9rem; font-weight: 700; letter-spacing: -.12em; }
+.center-mark small { font: .62rem var(--mono); text-transform: uppercase; }
+
+.catalog-page { width: min(1180px, calc(100% - 56px)); margin: 0 auto; padding: 65px 0 100px; }
+.page-heading { margin-bottom: 65px; }
+.page-heading h1 { font-size: clamp(3.8rem, 8vw, 7.2rem); }
+.listing-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+.listing-card { background: var(--card); border: 1px solid var(--line); }
+.listing-card img { height: 280px; object-fit: cover; }
+.listing-card > div { padding: 26px; }
+.listing-type { color: var(--coral); font: .7rem var(--mono); text-transform: uppercase; }
+.listing-card h2 { margin: 16px 0 10px; font-size: 1.7rem; letter-spacing: -.05em; }
+.listing-card p { min-height: 50px; margin: 0 0 22px; color: var(--muted); line-height: 1.55; }
+.listing-card strong { font: .72rem var(--mono); }
+.site-footer { padding: 24px 0 32px; border-top: 1px solid var(--line); color: var(--muted); font: .7rem var(--mono); }
+.site-footer a:hover { color: var(--coral); }
+
+@media (max-width: 700px) {
+    .site-header, .site-footer, .welcome, .catalog-page { width: min(100% - 32px, 520px); }
+    .site-header { align-items: flex-start; gap: 22px; flex-direction: column; padding: 22px 0; }
+    .main-nav { width: 100%; justify-content: space-between; gap: 8px; }
+    .welcome { padding: 42px 0 65px; }
+    h1 { font-size: clamp(4rem, 18vw, 6rem); }
+    .destination-grid { min-height: 455px; gap: 8px; margin-top: 36px; }
+    .destination { border-width: 6px; }
+    .destination img { min-height: 180px; }
+    .destination-hotel { height: 270px; }
+    .destination-lake { height: 290px; margin-top: 70px; }
+    .destination-food { height: 205px; margin-left: 45px; }
+    .destination-name { top: 12px; left: 12px; font-size: 1rem; }
+    .center-mark { width: 105px; height: 105px; padding: 17px 13px; border-width: 6px; }
+    .center-mark span { font-size: 2.1rem; }
+    .center-mark small { font-size: .5rem; }
+    .catalog-page { padding: 45px 0 70px; }
+    .page-heading { margin-bottom: 42px; }
+    .page-heading h1 { font-size: clamp(3.5rem, 17vw, 5.2rem); }
+    .listing-grid { grid-template-columns: 1fr; }
+    .listing-card img { height: 230px; }
+    .site-footer { align-items: flex-start; gap: 15px; flex-direction: column; }
+}
