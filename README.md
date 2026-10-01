@@ -5,3 +5,8 @@
   <a href="#contribuir">Contribuir</a> •
   <a href="#licencia">Licencia</a>
 </p>
+```mermaid
+graph LR
+  A[Usuario] --> B[API]
+  B --> C[(Base de datos)]
+```
